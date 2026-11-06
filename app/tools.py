@@ -79,7 +79,6 @@ def get_lecture_summary(lecture: int) -> str:
     return path.read_text(encoding="utf-8")
 
 
-
 def make_quiz(lecture: int) -> str:
     """指定した回（1始まりの整数）の用語から1つを選び、確認問題と答えを返す。
 
@@ -98,3 +97,24 @@ def make_quiz(lecture: int) -> str:
         {"question": f"「{entry['term']}」の意味は？", "answer": entry["definition"]},
         ensure_ascii=False,
     )
+
+
+LOG_DIR = Path(__file__).resolve().parent.parent / "learning_log"
+
+
+def save_learning_log(title: str, content: str) -> str:
+    """学習の記録を learning_log/ フォルダに Markdown ファイルとして保存する。
+
+    利用者が「今日学んだことを記録して」「この内容をメモに残して」のように、
+    学習の記録を残すよう頼んだときだけ使う。title にはファイル名に使う短い見出し、
+    content には保存する本文（Markdown）を入れる。保存の前に利用者の確認が入る。
+    """
+    import re
+    from datetime import datetime
+
+    LOG_DIR.mkdir(exist_ok=True)
+    stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    safe = re.sub(r'[\\/:*?"<>|\s]+', "_", title).strip("_")[:40] or "log"
+    path = LOG_DIR / f"{stamp}_{safe}.md"
+    path.write_text(f"# {title}\n\n{content}\n", encoding="utf-8")
+    return f"{path.relative_to(LOG_DIR.parent)} に保存しました。"
