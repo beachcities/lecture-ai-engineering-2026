@@ -15,6 +15,7 @@
 import argparse
 import inspect
 import json
+import unicodedata
 from pathlib import Path
 
 from pydantic_ai import Agent, DeferredToolRequests, DeferredToolResults, ToolDenied
@@ -123,7 +124,8 @@ def ask_approvals(requests: DeferredToolRequests) -> DeferredToolResults:
         print(f"\n[approval] {call.tool_name} を次の引数で実行しようとしています:")
         print(json.dumps(call.args_as_dict(), ensure_ascii=False, indent=2))
         try:
-            answer = input("実行してよいですか？ [y/N]: ").strip().lower()
+            # 日本語入力のまま打った全角の「ｙ」も y として読むため、NFKC で半角にそろえる
+            answer = unicodedata.normalize("NFKC", input("実行してよいですか？ [y/N]: ")).strip().lower()
         except EOFError:  # 入力できない環境（パイプなど）では拒否として扱う
             answer = ""
         if answer in ("y", "yes"):
