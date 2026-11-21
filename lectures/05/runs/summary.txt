@@ -1,0 +1,103 @@
+## ex_full_q1.log
+[model] gemini-3.5-flash-lite
+[time] 回答完了まで 3.82 秒（検索・埋め込みを含む）
+[usage] 入力 117,025 tokens / 出力 248 tokens / モデル応答 1 回
+[cost] 生成APIの推定コスト: $0.035728 USD（埋め込み・索引構築分は含まない）
+## ex_graph_q1.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_graph({'query': 'LoRA QLoRA 固定 学習'})
+[time] 回答完了まで 2.30 秒（検索・埋め込みを含む）
+[usage] 入力 5,771 tokens / 出力 221 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.002284 USD（埋め込み・索引構築分は含まない）
+## ex_retrieval_k5.log
+## ex_tree_q1.log
+[model] gemini-3.5-flash-lite
+[tool call]   browse_tree({})
+[tool call]   browse_tree({'node_id': 'lec02-main'})
+[tool call]   browse_tree({'node_id': 'lec02-main-s045'})
+[tool call]   browse_tree({'node_id': 'lec02-main-p052'})
+[time] 回答完了まで 4.87 秒（検索・埋め込みを含む）
+[usage] 入力 9,214 tokens / 出力 373 tokens / モデル応答 5 回
+[cost] 生成APIの推定コスト: $0.003697 USD（埋め込み・索引構築分は含まない）
+## ex_vector_q1.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'LoRA QLoRA 固定 学習'})
+[time] 回答完了まで 3.16 秒（検索・埋め込みを含む）
+[usage] 入力 3,487 tokens / 出力 205 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.001559 USD（埋め込み・索引構築分は含まない）
+## hw_k2_q1_r1.log
+[model] gemini-3.5-flash-lite
+## hw_k2_q1_r2.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'LoRA QLoRA 固定 学習'})
+[time] 回答完了まで 2.17 秒（検索・埋め込みを含む）
+[usage] 入力 2,200 tokens / 出力 201 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.001162 USD（埋め込み・索引構築分は含まない）
+## hw_k2_q1_r3.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'LoRA QLoRA 固定 学習'})
+[time] 回答完了まで 2.69 秒（検索・埋め込みを含む）
+[usage] 入力 2,200 tokens / 出力 244 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.001270 USD（埋め込み・索引構築分は含まない）
+## hw_k2_q2_r1.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'コンパクション セッション メモリ 第3回'})
+[tool call]   search_materials({'query': '日々のメモ 長期メモリ 第3回'})
+[time] 回答完了まで 11.88 秒（検索・埋め込みを含む）
+[usage] 入力 4,048 tokens / 出力 465 tokens / モデル応答 3 回
+[cost] 生成APIの推定コスト: $0.002377 USD（埋め込み・索引構築分は含まない）
+## hw_k2_q2_r2.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'コンパクション セッション メモリ 第3回'})
+[tool call]   search_materials({'query': '日々のメモ 長期メモリ 第3回'})
+[time] 回答完了まで 6.74 秒（検索・埋め込みを含む）
+[usage] 入力 2,625 tokens / 出力 461 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.001940 USD（埋め込み・索引構築分は含まない）
+## hw_k2_q2_r3.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'コンパクション セッション メモリ'})
+[tool call]   search_materials({'query': '日々のメモ 長期メモリ'})
+[time] 回答完了まで 9.82 秒（検索・埋め込みを含む）
+[usage] 入力 2,688 tokens / 出力 541 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.002159 USD（埋め込み・索引構築分は含まない）
+## hw_k5_q1_r1.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'LoRA 固定 学習 QLoRA 追加'})
+[time] 回答完了まで 2.76 秒（検索・埋め込みを含む）
+[usage] 入力 3,491 tokens / 出力 192 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.001527 USD（埋め込み・索引構築分は含まない）
+## hw_k5_q1_r2.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'LoRA 固定 学習 QLoRA 加える'})
+[time] 回答完了まで 2.45 秒（検索・埋め込みを含む）
+[usage] 入力 3,488 tokens / 出力 209 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.001569 USD（埋め込み・索引構築分は含まない）
+## hw_k5_q1_r3.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'LoRA QLoRA 固定 学習'})
+[time] 回答完了まで 2.42 秒（検索・埋め込みを含む）
+[usage] 入力 3,487 tokens / 出力 206 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.001561 USD（埋め込み・索引構築分は含まない）
+## hw_k5_q2_r1.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'コンパクション セッション メモリ'})
+[tool call]   search_materials({'query': '日々のメモ 長期メモリ'})
+[time] 回答完了まで 3.22 秒（検索・埋め込みを含む）
+[usage] 入力 4,812 tokens / 出力 521 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.002746 USD（埋め込み・索引構築分は含まない）
+## hw_k5_q2_r2.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'コンパクション セッション メモリ'})
+[time] 回答完了まで 2.82 秒（検索・埋め込みを含む）
+[usage] 入力 2,952 tokens / 出力 291 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.001613 USD（埋め込み・索引構築分は含まない）
+## hw_k5_q2_r3.log
+[model] gemini-3.5-flash-lite
+[tool call]   search_materials({'query': 'コンパクション セッション メモリ'})
+[tool call]   search_materials({'query': '長期メモリ 日々のメモ すべて'})
+[time] 回答完了まで 2.99 秒（検索・埋め込みを含む）
+[usage] 入力 4,814 tokens / 出力 442 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.002549 USD（埋め込み・索引構築分は含まない）
+## hw_retrieval_q1_k2.log
+## hw_retrieval_q2_k2.log
+## hw_retrieval_q2_k5.log

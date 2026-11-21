@@ -1,0 +1,4 @@
+# 2026-11-21 08:00:58 RAG_TOP_K=2
+# cmd: -m app.agent --trace 第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？
+[model] gemini-3.5-flash-lite
+モデルが混み合っています（503）。少し待ってから再実行してください。
