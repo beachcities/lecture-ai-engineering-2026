@@ -1,0 +1,18 @@
+$ uv run python -m app.mcp_agent --trace 第2回のクイズを作って  （やり直し）
+[date] 2026-11-24 09:12:38 UTC
+[server] glossary: コマンドで起動（uv run python -m app.mcp_server --quiz-error return）
+[model] gemini-3.5-flash-lite
+[tools] MCP サーバー（app/mcp_servers.json）
+第2回の確認問題をお出しします！
+
+**【確認問題】**
+「PEFT」の意味は何でしょうか？
+
+（答えを知りたいときや、考えてみた答えを確認したいときは教えてくださいね。）
+
+関連回：第2回
+
+--- trace ---
+[tool call]   glossary_make_quiz({'lecture': 2})
+[tool return] glossary_make_quiz -> {"question": "「PEFT」の意味は？", "answer": "モデルの全パラメータではなく、ごく一部や追加した小さなパラメータだけを学習する手法の総称。必要なGPUメモリと保存容量を大きく減らせる。LoRAが代表例。"}…
+[usage] 入力 857 tokens / 出力 67 tokens / モデル応答 2 回

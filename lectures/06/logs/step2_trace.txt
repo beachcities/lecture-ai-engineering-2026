@@ -1,0 +1,21 @@
+$ uv run python -m app.mcp_agent --trace AIE2026の講座の宿題にある「3レベル」とは何ですか？
+[date] 2026-11-24 09:09:22 UTC
+[server] glossary: コマンドで起動（uv run python -m app.mcp_server）
+[model] gemini-3.5-flash-lite
+[tools] MCP サーバー（app/mcp_servers.json）
+「3レベル」とは、AIE2026の宿題における構成のことです。
+
+宿題は以下の3つの段階に分かれています。
+
+1. **基礎**：講義内容の確認
+2. **実装**：自分でコードを書く
+3. **発展**：調査や試行
+
+これらの中から、どれか1つに取り組めばその回の宿題は完了となります。なお、原則として採点は行われません。
+
+第1回
+
+--- trace ---
+[tool call]   glossary_search_glossary({'query': '3レベル'})
+[tool return] glossary_search_glossary -> [{"term": "宿題の3レベル", "lecture": 1, "definition": "AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組…
+[usage] 入力 921 tokens / 出力 122 tokens / モデル応答 2 回

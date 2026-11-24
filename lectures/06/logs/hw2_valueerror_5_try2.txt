@@ -1,0 +1,162 @@
+$ uv run python -m app.mcp_agent --trace 第5回のクイズを作って
+[date] 2026-11-24 09:19:38 UTC
+[11/24/26 09:19:42] ERROR    Tool 'make_quiz' raised an unexpected server.py:455
+                             exception                                          
+                             ╭─ Traceback (most recent call last─╮              
+                             │ /workspaces/lecture-ai-engineerin │              
+                             │ g-2026/.venv/lib/python3.12/site- │              
+                             │ packages/mcp/server/mcpserver/too │              
+                             │ ls/base.py:179 in run             │              
+                             │                                   │              
+                             │   176 │   │   │   │   │   return  │              
+                             │       else resolved               │              
+                             │   177 │   │   │   │   pass_direct │              
+                             │   178 │   │   │                   │              
+                             │ ❱ 179 │   │   │   result = await  │              
+                             │       pass_directly)              │              
+                             │   180 │   │   │                   │              
+                             │   181 │   │   │   # Registration  │              
+                             │   182 │   │   │   # a body that r │              
+                             │                                   │              
+                             │ /workspaces/lecture-ai-engineerin │              
+                             │ g-2026/.venv/lib/python3.12/site- │              
+                             │ packages/mcp/server/mcpserver/uti │              
+                             │ lities/func_metadata.py:164 in    │              
+                             │ call_fn                           │              
+                             │                                   │              
+                             │   161 │   │   kwargs = arguments  │              
+                             │   162 │   │   if fn_is_async:     │              
+                             │   163 │   │   │   return await fn │              
+                             │ ❱ 164 │   │   return await anyio. │              
+                             │   165 │                           │              
+                             │   166 │   @deprecated(            │              
+                             │   167 │   │   "FuncMetadata.call_ │              
+                             │       3.0; "                      │              
+                             │                                   │              
+                             │ /workspaces/lecture-ai-engineerin │              
+                             │ g-2026/.venv/lib/python3.12/site- │              
+                             │ packages/anyio/to_thread.py:65 in │              
+                             │ run_sync                          │              
+                             │                                   │              
+                             │   62 │   │   │   stacklevel=2,    │              
+                             │   63 │   │   )                    │              
+                             │   64 │                            │              
+                             │ ❱ 65 │   return await get_async_b │              
+                             │   66 │   │   func, args, abandon_ │              
+                             │   67 │   )                        │              
+                             │   68                              │              
+                             │                                   │              
+                             │ /workspaces/lecture-ai-engineerin │              
+                             │ g-2026/.venv/lib/python3.12/site- │              
+                             │ packages/anyio/_backends/_asyncio │              
+                             │ .py:2706 in                       │              
+                             │ run_sync_in_worker_thread         │              
+                             │                                   │              
+                             │   2703 │   │   │   │   │   worker │              
+                             │   2704 │   │   │   │              │              
+                             │   2705 │   │   │   │   worker.que │              
+                             │ ❱ 2706 │   │   │   │   return awa │              
+                             │   2707 │                          │              
+                             │   2708 │   @classmethod           │              
+                             │   2709 │   def check_cancelled(cl │              
+                             │                                   │              
+                             │ /workspaces/lecture-ai-engineerin │              
+                             │ g-2026/.venv/lib/python3.12/site- │              
+                             │ packages/anyio/_backends/_asyncio │              
+                             │ .py:1100 in run                   │              
+                             │                                   │              
+                             │   1097 │   │   │   │   │   except │              
+                             │   1098 │   │   │   │   │   thread │              
+                             │   1099 │   │   │   │   │   try:   │              
+                             │ ❱ 1100 │   │   │   │   │   │   re │              
+                             │   1101 │   │   │   │   │   except │              
+                             │   1102 │   │   │   │   │   │   ex │              
+                             │   1103 │   │   │   │   │   finall │              
+                             │                                   │              
+                             │ /workspaces/lecture-ai-engineerin │              
+                             │ g-2026/app/mcp_server.py:75 in    │              
+                             │ make_quiz                         │              
+                             │                                   │              
+                             │    72 │   │   if QUIZ_ERROR_MODE  │              
+                             │    73 │   │   │   raise ToolError │              
+                             │    74 │   │   if QUIZ_ERROR_MODE  │              
+                             │ ❱  75 │   │   │   raise ValueErro │              
+                             │    76 │   │   return message      │              
+                             │    77 │   return tools.make_quiz( │              
+                             │    78                             │              
+                             ╰───────────────────────────────────╯              
+                             ValueError: lecture=5                              
+                             の回は用語集にありません。lecture                  
+                             には用語がある回の番号（1, 2, 3, 4,                
+                             6）のどれかを指定してください。                    
+                                                                                
+                             The above exception was the direct                 
+                             cause of the following exception:                  
+                                                                                
+                             ╭─ Traceback (most recent call last─╮              
+                             │ /workspaces/lecture-ai-engineerin │              
+                             │ g-2026/.venv/lib/python3.12/site- │              
+                             │ packages/mcp/server/mcpserver/ser │              
+                             │ ver.py:442 in _handle_call_tool   │              
+                             │                                   │              
+                             │    439 │   ) -> CallToolResult |  │              
+                             │    440 │   │   context = Context( │              
+                             │        subscriptions=self._subscr │              
+                             │    441 │   │   try:               │              
+                             │ ❱  442 │   │   │   return await s │              
+                             │    443 │   │   except MCPError:   │              
+                             │    444 │   │   │   raise          │              
+                             │    445 │   │   except Exception a │              
+                             │                                   │              
+                             │ /workspaces/lecture-ai-engineerin │              
+                             │ g-2026/.venv/lib/python3.12/site- │              
+                             │ packages/mcp/server/mcpserver/ser │              
+                             │ ver.py:548 in call_tool           │              
+                             │                                   │              
+                             │    545 │   │   """                │              
+                             │    546 │   │   if context is None │              
+                             │    547 │   │   │   context = Cont │              
+                             │ ❱  548 │   │   return await self. │              
+                             │        convert_result=True)       │              
+                             │    549 │                          │              
+                             │    550 │   async def list_resourc │              
+                             │    551 │   │   """List all availa │              
+                             │                                   │              
+                             │ /workspaces/lecture-ai-engineerin │              
+                             │ g-2026/.venv/lib/python3.12/site- │              
+                             │ packages/mcp/server/mcpserver/too │              
+                             │ ls/tool_manager.py:87 in          │              
+                             │ call_tool                         │              
+                             │                                   │              
+                             │   84 │   │   if not tool:         │              
+                             │   85 │   │   │   raise ToolError( │              
+                             │   86 │   │                        │              
+                             │ ❱ 87 │   │   return await tool.ru │              
+                             │   88                              │              
+                             │                                   │              
+                             │ /workspaces/lecture-ai-engineerin │              
+                             │ g-2026/.venv/lib/python3.12/site- │              
+                             │ packages/mcp/server/mcpserver/too │              
+                             │ ls/base.py:213 in run             │              
+                             │                                   │              
+                             │   210 │   │   │   raise ToolError │              
+                             │   211 │   │   except Exception as │              
+                             │   212 │   │   │   # A crash: the  │              
+                             │ ❱ 213 │   │   │   raise Unexpecte │              
+                             │   214                             │              
+                             ╰───────────────────────────────────╯              
+                             UnexpectedToolError: Error executing               
+                             tool make_quiz                                     
+[server] glossary: コマンドで起動（uv run python -m app.mcp_server --quiz-error valueerror）
+[model] gemini-3.5-flash-lite
+[tools] MCP サーバー（app/mcp_servers.json）
+用語集を確認しましたが、第5回に該当する内容や用語が見つかりませんでした。
+
+もし特定の用語について確認問題をご希望でしたら、その用語名を教えていただければ、用語集からお探ししてお作りすることができます！
+
+--- trace ---
+[tool call]   glossary_make_quiz({'lecture': 5})
+[tool error]  glossary_make_quiz -> Error executing tool make_quiz
+[tool call]   glossary_search_glossary({'query': '第5回'})
+[tool return] glossary_search_glossary -> 用語集に「第5回」は見つかりませんでした。…
+[usage] 入力 1,294 tokens / 出力 86 tokens / モデル応答 3 回

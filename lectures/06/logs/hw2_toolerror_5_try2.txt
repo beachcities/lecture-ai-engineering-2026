@@ -1,0 +1,18 @@
+$ uv run python -m app.mcp_agent --trace 第5回のクイズを作って
+[date] 2026-11-24 09:20:31 UTC
+[11/24/26 09:20:35] INFO     Tool 'make_quiz' failed: 'Error       server.py:453
+                             executing tool make_quiz: lecture=5                
+                             の回は用語集にありません。lecture                  
+                             には用語がある回の番号（1, 2, 3, 4,                
+                             6）のどれかを指定してください。'                   
+[server] glossary: コマンドで起動（uv run python -m app.mcp_server --quiz-error toolerror）
+[model] gemini-3.5-flash-lite
+[tools] MCP サーバー（app/mcp_servers.json）
+第5回は用語集に登録されていないため、クイズを作成することができません。
+
+用語集に登録されているのは、**第1回、第2回、第3回、第4回、第6回**となります。これらの回のいずれかのクイズをご希望でしたら、お気軽にお申し付けください！
+
+--- trace ---
+[tool call]   glossary_make_quiz({'lecture': 5})
+[tool error]  glossary_make_quiz -> Error executing tool make_quiz: lecture=5 の回は用語集にありません。lecture には用語がある回の番号（1, 2, 3, 4, 6）のどれかを指定してください。
+[usage] 入力 851 tokens / 出力 83 tokens / モデル応答 2 回
